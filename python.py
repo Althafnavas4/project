@@ -30,9 +30,11 @@ while True:
         f=0
         for i in shop:
             if id in i:
+              while True:
                 print('''
                     1.ubdate the price
                     2.ubdate the stock
+                    3.exit 
                            ''')
              
                 
@@ -40,21 +42,27 @@ while True:
              
                 if choice==1:
                    price=int(input("enter price:"))
-                   i[3]=price
+                   i[2]=price
                 elif choice==2:
                     stock=int(input('enter stock:'))
-                    i[4]=stock
+                    i[3]=stock
+                elif choice==3:
+                    break
+                else:
+                    print('invalid choice')            
+
             f=1
             if f==0:
                 print('invalid choice')
     elif choice==4:
-        name=str(input('enter the id:'))
+        id=int(input('enter the id:'))
         f=0
         for i in shop:
             if id in i:
-                shop.remove(i)
-            if f==0:
-                print('invalid choice')
+              shop.remove(i)
+              f=1   
+        if f==0:
+                 print('invalid choice')
     elif choice==5:
         id=int(input("enter id :"))
         f=0
